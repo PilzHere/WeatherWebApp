@@ -1,0 +1,2 @@
+# WeatherWebApp
+A school project.
