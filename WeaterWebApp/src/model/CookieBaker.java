@@ -8,7 +8,7 @@ public class CookieBaker {
 
 		final Cookie cookie = new Cookie(weatherBean.getCityName() + weatherBean.getCountryName(),
 				weatherBean.getCityName() + "/" + weatherBean.getCountryName() + "/" + weatherBean.getTempKelvin() + "/"
-						+ weatherBean.getCloudsStr().replaceAll(" ", "_"));
+						+ weatherBean.getDate() + "/" + weatherBean.getCloudsStr().replaceAll(" ", "_"));
 		cookie.setMaxAge(15 * minute);
 
 		return cookie;

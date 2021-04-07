@@ -21,6 +21,7 @@ out.print("<h3>" + (weatherBean.getCountryName()) + "<br />");
 out.print((weatherBean.getCityName() + "<br />"));
 final float weatherInCelsius = Float.parseFloat(weatherBean.getTempKelvin()) - 273.15f;
 out.print(weatherInCelsius + "°C<br />");
+out.print(weatherBean.getDate().substring(0, weatherBean.getDate().length() - 9) + "<br />");
 out.print(weatherBean.getCloudsStr() +"</h3>");
 
 out.println("<br />Cookies: " + "<br />");

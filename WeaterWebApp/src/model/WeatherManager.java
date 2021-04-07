@@ -54,7 +54,7 @@ public class WeatherManager {
 
 		brIn.close();
 
-		// System.out.println(apiResponse);
+		System.out.println(apiResponse);
 
 		final Document doc = convertStringToXMLDocument(apiResponse);
 		doc.getDocumentElement().normalize();
@@ -85,6 +85,19 @@ public class WeatherManager {
 				final String XMLTemperature = eElement.getAttribute("value");
 				// System.out.println(XMLTemperature);
 				weatherBean.setTempKelvin(XMLTemperature);
+			}
+		}
+
+		final NodeList nList3 = doc.getElementsByTagName("sun");
+
+		for (int temp = 0; temp < nList3.getLength(); temp++) {
+			final Node node = nList3.item(temp);
+
+			if (node.getNodeType() == Node.ELEMENT_NODE) {
+				final Element eElement = (Element) node;
+				final String XMLDate = eElement.getAttribute("rise");
+				// System.out.println(XMLDate);
+				weatherBean.setDate(XMLDate);
 			}
 		}
 	}
